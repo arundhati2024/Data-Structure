@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float temp[3][7];
+    int i, j;
+
+    // Input temperatures for each city
+    for (i = 0; i < 3; i++) {
+        cout << "Enter temperatures for City " << i + 1 << ":\n";
+        for (j = 0; j < 7; j++) {
+            cout << "  Day " << j + 1 << ": ";
+            cin >> temp[i][j];
+        }
+    }
+
+    // Display header with vertical lines
+    cout << "\n";
+    cout << "\t\t\tTemperature Tracking\n";
+    cout << "---------------------------------------------------------------------------------------------\n";
+    cout << "| Sr.No | Name    | Day 1 |  Day 2  | Day 3 |   Day 4 |  Day 5 |  Day 6 |  Day 7 | Avg Temp |\n";
+    cout << "---------------------------------------------------------------------------------------------\n";
+
+    // Display temperature data for each city with vertical lines
+    for (i = 0; i < 3; i++) {
+        float total = 0, avg;
+        cout << "|   " << i + 1 << "   | City " << i + 1 << "  |";
+
+        // Display temperatures for each day with vertical lines
+        for (j = 0; j < 7; j++) {
+            cout << " " << fixed << setprecision(2) << temp[i][j] << "C |";
+            total += temp[i][j];
+        }
+
+        avg = total / 7;
+        cout << " " << fixed << setprecision(2) << avg << "C |" << endl;
+        cout << "--------------------------------------------------------------------------------------------\n";
+    }
+
+    cout << "B24CE1137\n";
+
+    return 0;
+}
+
