@@ -1,0 +1,94 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int n;
+int p,c,temp=0;
+int i; 
+cout<<"name:arundhati nath \n prn:B24CE1137 \n";
+cout<<"enter number of scores\n";
+cin>>n;
+cout<<"****************************** \n";
+int player1[n];
+int player2[n];
+cout<<"enter score for player 1 \n";
+for(i=0;i<n;i++)
+{
+	cin>>player1[i];
+	cout<<"----------------------------\n";
+}
+cout<<"enter score for player 2 \n";
+for( i=0;i<n;i++)
+{
+	cin>>player2[i];
+	cout<<"----------------------------\n";
+}
+ for( p=0;p<n;p++)
+ {
+  for(c=0;c<n-p-1;c++)
+  {
+    if (player1[c]<player1[c+1])
+ {
+	 temp=player1[c];
+	 player1[c]=player1[c+1];
+	 player1[c+1]=temp;
+	 cout<<"swapping score of "<<player1[c]<<" with "<<player1[c+1]<<"\n level up \n";
+ }
+ cout<<"----------------------------\n";
+}
+}
+		for(i=0;i<n;i++)
+{
+	cout<<"score of player 1 "<<player1[i]<<"\n";
+}
+	cout<<"Level complete! Scores sorted! \n";
+	cout<<"****************************** \n";
+	for(int p=0;p<n;p++)
+ {
+  for(int c=0;c<n-1;c++)
+  {
+    if (player2[c]>player2[c+1])
+ {
+	 temp=player2[c];
+	 player2[c]=player2[c+1];
+	 player2[c+1]=temp;
+	 cout<<"swapping score of "<<player2[c]<<" with "<<player2[c+1]<<"\nlevel up\n";
+ }
+  	cout<<"----------------------------\n";
+}
+}
+
+for(i=0;i<n;i++)
+{
+	cout<<"score of player 2 "<<player2[i]<<"\n";
+}
+cout<<"Level complete! Scores sorted! \n";
+cout<<"****************************** \n";
+if(player1[0]>player2[0])
+{
+	cout<<"\n";
+	cout<<"****************************** \n";
+            cout<<"player 1 is winner \n";
+	cout<<"****************************** \n";
+}
+else if(player2[0]>player1[0])
+{
+		cout<<"\n";
+	cout<<"****************************** \n";
+           cout<<"player 2 is winner \n";
+	cout<<"****************************** \n";
+}
+else
+{
+	cout<<"****************************** \n";
+
+	cout<<"tie \n";
+	cout<<"****************************** \n";
+}
+cout<<"----------------------------\n";
+cout<<"congratulations!!!! \n";
+cout<<"----------------------------\n";
+		             
+
+}
+
