@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main(){
+	char ch;
+	int server,req;
+	cout<<"B24CE1137\n";
+	cout<<"enter number of servers: \n";
+	cin>>server;
+	int arr[100]={0};
+	while(1){
+		cout<<"enter a request id \n";
+		cin>>req;
+		int hash_val=req%server;
+		arr[hash_val]++;
+		cout<<"request "<<req<<" assigned to server "<<hash_val<<endl;
+		cout<<" \n Do you want to continue?(Y to continue,E to exit)";
+		cin>>ch;
+		if(ch=='E'){
+			
+		cout<<"\n...........exiting the load balance";
+		break;
+	}
+		else if(ch=='Y')
+	{
+		continue;
+	}
+	else{
+		cout<<"\ninvalid input,exiting";
+		break;
+	}
+}
+cout<<"\n\t\t  LOAD ON EACH SERVER\n";
+cout<<"\n=============================================="<<"|\n";
+cout<<"  "<< "SERVER"<<" "<<"\t\t\t"<<"REQUEST"<<"\t      | ";
+cout<<"\n=============================================="<<"|\n";
+for(int i=0;i<server;i++)
+{  
+	cout<<"  "<<"server"<<i<<"\t\t|\t"<<arr[i]<< req <<"\t      |"<<"\n";
+}
+cout<<"==============================================";
+return 0;
+}
